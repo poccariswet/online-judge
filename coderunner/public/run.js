@@ -8,7 +8,7 @@ function runCode()
   var input = $("#input").val();
   $.ajax({
     url: "/api/run",
-    mrthod: "POST",
+    method: "POST",
     data: {
       language: language,
       source_code: source_code,
@@ -19,7 +19,7 @@ function runCode()
     $("#stderr").text(result.stderr);
     $("#time").text(result.time);
     $("#exit_code").text(result.exit_code);
-    $("#run_button").text("実行(Ctrl-Enter)").prop("disabled", false
+    $("#run_button").text("実行(Ctrl-Enter)").prop("disabled", false);
   }).fail(function(error){
     alert("Request Failed:" + error);
     $("#run_button").text("実行(Ctrl-Enter)").prop("disabled", false);
